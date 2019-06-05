@@ -1,5 +1,6 @@
-def label = 'jenkins-slave'
-podTemplate(label: label, namespace: 'default', containers: [
+def jobLabel = "jenkinsslave-${UUID.randomUUID().toString()}"
+def buildLabel = jobLabel + '-build'
+podTemplate(label: buildLabel, containers: [
     containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'golang', image: 'golang:1.8.0', ttyEnabled: true, command: 'cat')
   ]) {
