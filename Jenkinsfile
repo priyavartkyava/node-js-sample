@@ -1,4 +1,4 @@
-def label = "mypod-${UUID.randomUUID().toString()}"
+def label = "jenkins-slave"
 
 podTemplate(label: 'jenkins-slave',cloud: 'kubernetes', containers: [
     containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
