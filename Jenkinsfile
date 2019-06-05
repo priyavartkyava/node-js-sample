@@ -1,5 +1,5 @@
-def label = 'test'
-podTemplate(label: 'test', cloud: 'kubernetes', namespace: 'default', containers: [
+def label = 'jenkins-slave'
+podTemplate(label: label, cloud: 'kubernetes', namespace: 'default', containers: [
     containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'golang', image: 'golang:1.8.0', ttyEnabled: true, command: 'cat')
   ]) {
